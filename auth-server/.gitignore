@@ -1,0 +1,11 @@
+# Ignore config file with secrets
+config.json
+
+# Ignore node dependencies
+node_modules/
+
+# Ignore Serverless build artifacts
+.serverless/
+
+# Ignore logs
+*.log
