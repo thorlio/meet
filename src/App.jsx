@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useEffect, useState } from "react";
 import EventList from "./components/EventList";
 import CitySearch from "./components/CitySearch";
