@@ -1,50 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations = [], setCurrentCity }) => {
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestions, setSuggestions] = useState(() => []);
+
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [JSON.stringify(allLocations)]);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    const filteredLocations = allLocations
-      ? allLocations.filter((location) => {
-          return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
-        })
+    setQuery(value);
+    setShowSuggestions(true);
+
+    const filteredSuggestions = allLocations
+      ? allLocations.filter((location) =>
+          location.toUpperCase().includes(value.toUpperCase())
+        )
       : [];
 
-    setQuery(value);
-    setSuggestions(filteredLocations);
+    setSuggestions(filteredSuggestions);
   };
 
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
+    if (setCurrentCity) {
+      setCurrentCity(value);
+    }
   };
 
   return (
     <div id="city-search">
       <input
         type="text"
+        role="textbox"
         className="city"
-        placeholder="Search for a city"
         value={query}
-        onFocus={() => setShowSuggestions(true)}
         onChange={handleInputChanged}
+        onFocus={() => setShowSuggestions(true)}
+        placeholder="Search for a city"
       />
-      {showSuggestions ? (
-        <ul className="suggestions">
-          {suggestions.map((suggestion) => (
-            <li onClick={handleItemClicked} key={suggestion}>
-              {suggestion}
+
+      {showSuggestions && (
+        <ul className="suggestions" role="listbox">
+          {suggestions.map((location) => (
+            <li key={location} onClick={handleItemClicked}>
+              {location}
             </li>
           ))}
-          <li key="See all cities" onClick={handleItemClicked}>
-            <b>See all cities</b>
+          <li key="all" onClick={handleItemClicked}>
+            See all cities
           </li>
         </ul>
-      ) : null}
+      )}
     </div>
   );
 };
