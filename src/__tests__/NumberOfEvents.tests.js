@@ -16,19 +16,19 @@ describe("<NumberOfEvents /> Component", () => {
   });
 
   test("component contains input textbox", () => {
-    const input = NumberOfEventsComponent.queryByRole("textbox");
+    const input = NumberOfEventsComponent.queryByRole("spinbutton");
     expect(input).toBeInTheDocument();
   });
 
   test("ensures the default value of textbox is 32", () => {
-    const input = NumberOfEventsComponent.queryByRole("textbox");
-    expect(input).toHaveValue("32");
+    const input = NumberOfEventsComponent.queryByRole("spinbutton");
+    expect(input).toHaveValue(32);
   });
 
   test("textbox value changes when user updates input", async () => {
-    const input = NumberOfEventsComponent.getByTestId("numberOfEventsInput");
     const user = userEvent.setup();
+    const input = NumberOfEventsComponent.getByTestId("numberOfEventsInput");
     await user.type(input, "{backspace}{backspace}10");
-    expect(input).toHaveValue("10");
+    expect(input).toHaveValue(10);
   });
 });
