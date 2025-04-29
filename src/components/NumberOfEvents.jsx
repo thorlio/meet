@@ -5,7 +5,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(currentNOE);
 
   const handleInputChanged = (event) => {
-    const value = parseInt(event.target.value, 10);
+    const value = event.target.value;
     setNumber(value);
     if (isNaN(value) || value <= 0) {
       setErrorAlert("Enter a valid number");
