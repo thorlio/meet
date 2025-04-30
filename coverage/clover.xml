@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745894139587" clover="3.2.0">
-  <project timestamp="1745894139587" name="All files">
-    <metrics statements="57" coveredstatements="55" conditionals="28" coveredconditionals="26" methods="20" coveredmethods="18" elements="105" coveredelements="99" complexity="0" loc="57" ncloc="57" packages="2" files="7" classes="7"/>
+<coverage generated="1745984343492" clover="3.2.0">
+  <project timestamp="1745984343492" name="All files">
+    <metrics statements="58" coveredstatements="56" conditionals="28" coveredconditionals="26" methods="20" coveredmethods="18" elements="106" coveredelements="100" complexity="0" loc="58" ncloc="58" packages="2" files="7" classes="7"/>
     <package name="src">
       <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="6"/>
       <file name="App.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\App.jsx">
@@ -36,26 +36,27 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="36" coveredstatements="35" conditionals="26" coveredconditionals="25" methods="12" coveredmethods="12"/>
+      <metrics statements="37" coveredstatements="36" conditionals="26" coveredconditionals="25" methods="12" coveredmethods="12"/>
       <file name="CitySearch.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\components\CitySearch.jsx">
-        <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="36" type="stmt"/>
         <line num="7" count="36" type="stmt"/>
         <line num="8" count="36" type="stmt"/>
-        <line num="9" count="36" type="stmt"/>
-        <line num="10" count="20" type="stmt"/>
-        <line num="11" count="20" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="24" type="stmt"/>
-        <line num="17" count="20" type="stmt"/>
+        <line num="10" count="36" type="stmt"/>
+        <line num="11" count="20" type="stmt"/>
+        <line num="12" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="24" type="stmt"/>
         <line num="18" count="20" type="stmt"/>
-        <line num="20" count="36" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="19" count="20" type="stmt"/>
+        <line num="22" count="36" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="26" count="36" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="39" count="12" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="36" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
       </file>
       <file name="Event.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\components\Event.jsx">
         <metrics statements="4" coveredstatements="4" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>

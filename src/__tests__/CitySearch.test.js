@@ -25,10 +25,12 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.click(cityTextBox);
+
     const suggestionList = CitySearchComponent.queryByRole("list");
     expect(suggestionList).toBeInTheDocument();
     expect(suggestionList).toHaveClass("suggestions");
   });
+
   test("updates list of suggestions correctly when user types in city textbox", async () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
@@ -69,7 +71,9 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
+    CitySearchComponent.rerender(
+      <CitySearch allLocations={allLocations} setCurrentCity={() => {}} />
+    );
 
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berlin");

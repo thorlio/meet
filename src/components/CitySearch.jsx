@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+
   const handleInputChanged = (event) => {
     const value = event.target.value;
     const filteredLocations = allLocations
@@ -17,10 +18,12 @@ const CitySearch = ({ allLocations }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
   };
+
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false); // to hide the list
+    setCurrentCity(value);
   };
 
   return (
@@ -42,7 +45,7 @@ const CitySearch = ({ allLocations }) => {
               </li>
             );
           })}
-          <li key="See all cities" onClick={handleItemClicked}>
+          <li onClick={handleItemClicked} key="See all cities">
             <b>See all cities</b>
           </li>
         </ul>
