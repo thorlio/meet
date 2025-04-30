@@ -3,6 +3,7 @@ import React from "react";
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(currentNOE.toString());
+  const [errorText, setErrorText] = useState("");
 
   const handleInputChanged = (event) => {
     const input = event.target.value;
@@ -35,6 +36,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
           onChange={handleInputChanged}
           data-testid="numberOfEventsInput"
         />
+        {errorText && <div className="error-text">{errorText}</div>}
       </label>
     </div>
   );
