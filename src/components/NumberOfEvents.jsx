@@ -2,11 +2,10 @@ import { useState } from "react";
 import React from "react";
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
-  const [number, setNumber] = useState(currentNOE);
+  const [number, setNumber] = useState(currentNOE.toString());
 
   const handleInputChanged = (event) => {
     const input = event.target.value;
-
     if (input === "") {
       setNumber("");
       return;
