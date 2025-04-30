@@ -36,8 +36,8 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
           onChange={handleInputChanged}
           data-testid="numberOfEventsInput"
         />
-        {errorText && <div className="error-text">{errorText}</div>}
       </label>
+      {errorText && <div className="error-text">{errorText}</div>}
     </div>
   );
 };
