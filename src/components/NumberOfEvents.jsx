@@ -23,6 +23,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
       <label>
         Number of Events:
         <input
+          id="numberInput"
           type="number"
           value={number}
           onChange={handleInputChanged}
