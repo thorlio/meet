@@ -5,7 +5,14 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(currentNOE);
 
   const handleInputChanged = (event) => {
-    const value = Number(event.target.value);
+    const input = event.target.value;
+
+    if (input === "") {
+      setNumber("");
+      return;
+    }
+
+    const value = Number(input);
     setNumber(value);
 
     if (isNaN(value) || value <= 0) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745984685757" clover="3.2.0">
-  <project timestamp="1745984685758" name="All files">
-    <metrics statements="58" coveredstatements="56" conditionals="28" coveredconditionals="26" methods="20" coveredmethods="18" elements="106" coveredelements="100" complexity="0" loc="58" ncloc="58" packages="2" files="7" classes="7"/>
+<coverage generated="1745986000342" clover="3.2.0">
+  <project timestamp="1745986000343" name="All files">
+    <metrics statements="62" coveredstatements="59" conditionals="30" coveredconditionals="27" methods="20" coveredmethods="18" elements="112" coveredelements="104" complexity="0" loc="62" ncloc="62" packages="2" files="7" classes="7"/>
     <package name="src">
       <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="6"/>
       <file name="App.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\App.jsx">
@@ -36,7 +36,7 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="37" coveredstatements="36" conditionals="26" coveredconditionals="25" methods="12" coveredmethods="12"/>
+      <metrics statements="41" coveredstatements="39" conditionals="28" coveredconditionals="26" methods="12" coveredmethods="12"/>
       <file name="CitySearch.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\components\CitySearch.jsx">
         <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
         <line num="5" count="2" type="stmt"/>
@@ -72,19 +72,23 @@
         <line num="10" count="35" type="stmt"/>
       </file>
       <file name="NumberOfEvents.jsx" path="C:\Users\thesa\OneDrive\Documents\meet\src\components\NumberOfEvents.jsx">
-        <metrics statements="12" coveredstatements="11" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <metrics statements="16" coveredstatements="14" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="10" type="stmt"/>
         <line num="7" count="10" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="13" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
-        <line num="20" count="10" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
       </file>
     </package>
   </project>
