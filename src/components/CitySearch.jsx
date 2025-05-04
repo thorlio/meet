@@ -1,11 +1,29 @@
 // src/components/CitySearch.jsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [JSON.stringify(allLocations)]);
+
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
@@ -22,12 +40,12 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
-    setShowSuggestions(false); // to hide the list
+    setShowSuggestions(false); // hide the list
     setCurrentCity(value);
   };
 
   return (
-    <div id="city-search">
+    <div id="city-search" ref={wrapperRef}>
       <input
         type="text"
         className="city"
