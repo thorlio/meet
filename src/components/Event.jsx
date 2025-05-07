@@ -10,7 +10,9 @@ const Event = ({ event }) => {
       <p>{event && event.location}</p>
       <p>{event && event.created}</p>
       {showDetails ? (
-        <p className="details">{event && event.description}</p>
+        <p data-testid="event-details" className="details">
+          {event && event.description}
+        </p>
       ) : null}
       <button
         className="details-btn"

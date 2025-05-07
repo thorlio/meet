@@ -53,18 +53,18 @@ describe("App /> integration", () => {
     allRenderedEventItems.forEach((event) => {
       expect(event.textContent).toContain("Berlin, Germany");
     });
+  });
 
-    test("renders the number of events matching user input", async () => {
-      const user = userEvent.setup();
-      const AppComponent = render(<App />);
-      const AppDOM = AppComponent.container.firstChild;
+  test("renders the number of events matching user input", async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
 
-      const numberOfEventsInput = within(AppDOM).getByRole("spinbutton");
-      await user.clear(numberOfEventsInput); // clear the default "32"
-      await user.type(numberOfEventsInput, "10");
+    const numberOfEventsInput = within(AppDOM).getByRole("spinbutton");
+    await user.clear(numberOfEventsInput); // clear the default "32"
+    await user.type(numberOfEventsInput, "10");
 
-      const eventListItems = await AppComponent.findAllByRole("listitem");
-      expect(eventListItems.length).toBeLessThanOrEqual(10);
-    });
+    const eventListItems = await AppComponent.findAllByRole("listitem");
+    expect(eventListItems.length).toBeLessThanOrEqual(10);
   });
 });
