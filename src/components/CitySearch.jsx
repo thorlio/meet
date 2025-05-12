@@ -9,7 +9,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
   useEffect(() => {
     setSuggestions(allLocations);
-  }, [JSON.stringify(allLocations)]);
+  }, [allLocations]);
 
   const wrapperRef = useRef(null);
 
@@ -49,7 +49,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
     setQuery(value);
-    setShowSuggestions(false); // hide the list
+    setShowSuggestions(false);
     setCurrentCity(value);
     setInfoAlert("");
   };

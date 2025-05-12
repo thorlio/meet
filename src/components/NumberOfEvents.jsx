@@ -3,12 +3,13 @@ import React from "react";
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(currentNOE.toString());
-  const [errorText, setErrorText] = useState("");
 
   const handleInputChanged = (event) => {
     const input = event.target.value;
+
     if (input === "") {
       setNumber("");
+      setErrorAlert("");
       return;
     }
 
@@ -18,7 +19,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
     if (isNaN(value) || value <= 0) {
       setErrorAlert("Enter a valid number");
     } else if (value > 32) {
-      setErrorAlert("Only maximum of 32 is allowed");
+      setErrorAlert("Only a maximum of 32 is allowed");
     } else {
       setErrorAlert("");
       setCurrentNOE(value);
@@ -37,7 +38,6 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
           data-testid="numberOfEventsInput"
         />
       </label>
-      {errorText && <div className="error-text">{errorText}</div>}
     </div>
   );
 };

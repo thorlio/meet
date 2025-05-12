@@ -8,10 +8,13 @@ import App from "../App";
 
 describe("<CitySearch /> component", () => {
   let CitySearchComponent;
-
   beforeEach(() => {
     CitySearchComponent = render(
-      <CitySearch allLocations={[]} setCurrentCity={() => {}} />
+      <CitySearch
+        allLocations={["Berlin, Germany", "New York, USA"]}
+        setCurrentCity={() => {}}
+        setInfoAlert={() => {}}
+      />
     );
   });
   test("renders text input", () => {
@@ -39,13 +42,17 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
+    CitySearchComponent.rerender(
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={() => {}}
+        setInfoAlert={() => {}}
+      />
+    );
 
-    // user types "Berlin" in city textbox
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berlin");
 
-    // filter allLocations to locations matching "Berlin"
     const suggestions = allLocations
       ? allLocations.filter((location) => {
           return (
@@ -54,7 +61,6 @@ describe("<CitySearch /> component", () => {
         })
       : [];
 
-    // get all <li> elements inside the suggestion list
     const suggestionListItems = CitySearchComponent.queryAllByRole("listitem");
     expect(suggestionListItems).toHaveLength(suggestions.length + 1);
     for (let i = 0; i < suggestions.length; i += 1) {
@@ -62,7 +68,6 @@ describe("<CitySearch /> component", () => {
     }
   });
 
-  //to test the falsy ternary of allLocations
   test("handles missing allLocations prop safely", async () => {
     const user = userEvent.setup();
 
@@ -76,13 +81,16 @@ describe("<CitySearch /> component", () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
     CitySearchComponent.rerender(
-      <CitySearch allLocations={allLocations} setCurrentCity={() => {}} />
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={() => {}}
+        setInfoAlert={() => {}}
+      />
     );
 
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berlin");
 
-    // the suggestion's textContent look like this: "Berlin, Germany"
     const BerlinGermanySuggestion =
       CitySearchComponent.queryAllByRole("listitem")[0];
 
