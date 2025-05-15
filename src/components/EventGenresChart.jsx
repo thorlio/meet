@@ -43,6 +43,7 @@ const EventGenresChart = ({ events }) => {
         fill="#8884d8"
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
+        style={{ fontsize: "12px", whiteSpace: "nowrap" }}
       >
         {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
       </text>
