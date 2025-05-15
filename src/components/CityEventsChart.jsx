@@ -18,7 +18,7 @@ const CityEventsChart = ({ allLocations, events }) => {
     console.log("All Locations:", allLocations);
     console.log("Events:", events);
     setData(getData());
-  }, [`${data}`]);
+  }, [allLocations, events]);
 
   const getData = () => {
     const data = allLocations.map((location) => {
