@@ -103,7 +103,7 @@ input[type="number"] {
   overflow: visible;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .charts-container {
     grid-template-columns: 1fr;
   }
