@@ -100,9 +100,10 @@ input[type="number"] {
   grid-template-columns: 1fr 1fr;  
   gap: 20px;                      
   margin-top: 20px;
+  overflow: visible;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .charts-container {
     grid-template-columns: 1fr;
   }
