@@ -108,3 +108,17 @@ input[type="number"] {
     grid-template-columns: 1fr;
   }
 }
+
+.back-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.back-button:hover {
+  background-color: #555;
+}

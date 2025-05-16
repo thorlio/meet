@@ -41,6 +41,15 @@ const App = () => {
 
   return (
     <div className="App">
+      <button
+        className="back-button"
+        onClick={() =>
+          (window.location.href =
+            "https://thorlio.github.io/meet_app_portfolio/")
+        }
+      >
+        Back to Portfolio
+      </button>
       <h1>Meet App</h1>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
